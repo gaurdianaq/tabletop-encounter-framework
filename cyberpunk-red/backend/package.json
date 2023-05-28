@@ -1,0 +1,23 @@
+{
+  "name": "beyond-cyberpunk-red-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.17.0",
+    "@trpc/server": "^10.28.0",
+    "typescript": "^5.0.4",
+    "zod": "^3.21.4",
+    "neverthrow": "^6.0.0",
+    "beyond-cyberpunk-red-trpc": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "20.2.5"
+  }
+}
