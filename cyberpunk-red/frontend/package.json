@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "dependencies": {
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
@@ -19,6 +20,7 @@
     "tailwindcss": "3.3.2",
     "typescript": "^5.0.4",
     "@trpc/server": "^10.28.0",
+    "@trpc/client": "^10.28.0",
     "zod": "^3.21.4",
     "neverthrow": "^6.0.0",
     "beyond-cyberpunk-red-trpc": "workspace:*"

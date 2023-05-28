@@ -26,6 +26,7 @@ importers:
 
   ../../cyberpunk-red/frontend:
     specifiers:
+      '@trpc/client': ^10.28.0
       '@trpc/server': ^10.28.0
       '@types/node': 20.2.5
       '@types/react': 18.2.7
@@ -43,6 +44,7 @@ importers:
       typescript: ^5.0.4
       zod: ^3.21.4
     dependencies:
+      '@trpc/client': 10.28.0_@trpc+server@10.28.0
       '@trpc/server': 10.28.0
       autoprefixer: 10.4.14_postcss@8.4.23
       beyond-cyberpunk-red-trpc: link:../trpc
@@ -323,6 +325,14 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.5.2
+    dev: false
+
+  /@trpc/client/10.28.0_@trpc+server@10.28.0:
+    resolution: {integrity: sha512-Xhl2xdGI4PkI/a8xaTbsdpIXOy7PeOZaBBdvBgs2kpKiznNAI10qPrK+GLIDkSxvekLqDSnVYIhS0kU0FkhEXw==}
+    peerDependencies:
+      '@trpc/server': 10.28.0
+    dependencies:
+      '@trpc/server': 10.28.0
     dev: false
 
   /@trpc/server/10.28.0:
