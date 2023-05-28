@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.mjs",
+  "exports": {
+    "./client": "./dist/client.mjs",
+    "./server": "./dist/server.mjs"
+  },
   "type": "module",
   "scripts": {
     "build": "tsc"

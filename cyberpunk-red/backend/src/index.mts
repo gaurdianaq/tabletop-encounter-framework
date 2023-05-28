@@ -1,7 +1,7 @@
 // ESM
 import Fastify from 'fastify';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import { appRouter } from 'beyond-cyberpunk-red-trpc/dist/server.mjs';
+import { appRouter } from 'beyond-cyberpunk-red-trpc/server';
 const fastify = Fastify({
   logger: true,
 });
