@@ -62,7 +62,16 @@ importers:
       '@types/react-dom': 18.2.4
 
   ../../cyberpunk-red/trpc:
-    specifiers: {}
+    specifiers:
+      '@trpc/server': ^10.28.0
+      neverthrow: ^6.0.0
+      typescript: ^5.0.4
+      zod: ^3.21.4
+    dependencies:
+      '@trpc/server': 10.28.0
+      neverthrow: 6.0.0
+      typescript: 5.0.4
+      zod: 3.21.4
 
 packages:
 
