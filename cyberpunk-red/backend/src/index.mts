@@ -1,18 +1,42 @@
 // ESM
+import {
+  GetUserPayloadSchema,
+  IApiError,
+  TGetUserPayload,
+  TUser,
+  getUserFunctionSignature,
+  parseZodResult,
+  validateRequestBody,
+} from 'beyond-cyberpunk-red-schema';
 import Fastify from 'fastify';
-import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
-import { appRouter } from 'beyond-cyberpunk-red-trpc/server';
+import { ResultAsync, errAsync, okAsync } from 'neverthrow';
 const fastify = Fastify({
   logger: true,
 });
 
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' };
-});
+const getUser: getUserFunctionSignature = (payload: TGetUserPayload) => {
+  return okAsync({ email: 'cooldude@cool.cool', firstName: 'Cool', lastName: 'Dude', id: 5 } as TUser);
+};
 
-fastify.register(fastifyTRPCPlugin, {
-  prefix: '/trpc',
-  trpcOptions: { router: appRouter },
+fastify.post('/rpc', async (request, reply) => {
+  return validateRequestBody(request.body as string)
+    .asyncAndThen<TUser, unknown>((result) => {
+      if (result.funcName === 'getUser') {
+        //TODO move parseZodResult into the getUser call
+        return parseZodResult(GetUserPayloadSchema, result.payload).asyncAndThen((payload) => {
+          return getUser(payload);
+        });
+      }
+      return errAsync('No matching function was found');
+    })
+    .match<{ data: TUser } | { error: unknown }>(
+      (user) => {
+        return { data: user };
+      },
+      (error) => {
+        return { error: error };
+      }
+    );
 });
 
 /**
@@ -20,7 +44,8 @@ fastify.register(fastifyTRPCPlugin, {
  */
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 });
+    //TODO assign port and URL and other things via config
+    await fastify.listen({ port: 3001 });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

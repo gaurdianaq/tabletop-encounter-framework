@@ -35,8 +35,8 @@
       "projectFolder": "cyberpunk-red/backend"
     },
     {
-      "packageName": "beyond-cyberpunk-red-trpc",
-      "projectFolder": "cyberpunk-red/trpc"
+      "packageName": "beyond-cyberpunk-red-schema",
+      "projectFolder": "cyberpunk-red/schema"
     }
   ]
 }
