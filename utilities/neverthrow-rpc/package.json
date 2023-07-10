@@ -1,5 +1,5 @@
 {
-  "name": "beyond-cyberpunk-red-schema",
+  "name": "neverthrow-rpc",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.mjs",
@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "mocha"
+    "test": "mocha --require ./testSetup/hooks.mts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "neverthrow": "^6.0.0"
   },
   "devDependencies": {
+    "fastify": "^4.17.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.2.5",
     "@types/chai": "^4.3.5",

@@ -1,7 +1,6 @@
 import { z } from "zod";
-import { IdSchema } from "../base.mjs";
 import { ResultAsync } from "neverthrow";
-import { IApiError } from "../requests/requests.mjs";
+import { IApiError, IdSchema } from "neverthrow-rpc";
 
 export const GetUserPayloadSchema = z.object({
   id: IdSchema,

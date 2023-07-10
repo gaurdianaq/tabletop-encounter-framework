@@ -22,7 +22,8 @@
     "typescript": "^5.0.4",
     "zod": "^3.21.4",
     "neverthrow": "^6.0.0",
-    "beyond-cyberpunk-red-schema": "workspace:*"
+    "beyond-cyberpunk-red-schema": "workspace:*",
+    "neverthrow-rpc": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",

@@ -37,6 +37,10 @@
     {
       "packageName": "beyond-cyberpunk-red-schema",
       "projectFolder": "cyberpunk-red/schema"
+    },
+    {
+      "packageName": "neverthrow-rpc",
+      "projectFolder": "utilities/neverthrow-rpc"
     }
   ]
 }

@@ -1,15 +1,8 @@
 // ESM
-import {
-  GetUserPayloadSchema,
-  IApiError,
-  TGetUserPayload,
-  TUser,
-  getUserFunctionSignature,
-  parseZodResult,
-  validateRequestBody,
-} from 'beyond-cyberpunk-red-schema';
+import { GetUserPayloadSchema, TGetUserPayload, TUser, getUserFunctionSignature } from 'beyond-cyberpunk-red-schema';
 import Fastify from 'fastify';
-import { ResultAsync, errAsync, okAsync } from 'neverthrow';
+import { errAsync, okAsync } from 'neverthrow';
+import { parseZodResult, validateRequestBody } from 'neverthrow-rpc';
 const fastify = Fastify({
   logger: true,
 });

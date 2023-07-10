@@ -1,17 +1,12 @@
-import {
-  getUserFunctionSignature,
-  TGetUserPayload,
-  createRequest,
-  TUser,
-  IApiError,
-} from 'beyond-cyberpunk-red-schema';
+import { getUserFunctionSignature, TGetUserPayload, TUser } from 'beyond-cyberpunk-red-schema';
 import { okAsync } from 'neverthrow';
+import { createRequest, IApiError } from 'neverthrow-rpc';
 import { headers } from 'next/dist/client/components/headers.js';
 
-export const BACKEND_URL = 'http://127.0.0.1:3001/rpc';
+const BACKEND_URL = 'http://127.0.0.1:3001/rpc';
 
 //TODO figure out module resolution issues I'm having, fallback plan is switch to whatever next is set to use by default
-export const getUser: getUserFunctionSignature = (payload: TGetUserPayload) => {
+const getUser: getUserFunctionSignature = (payload: TGetUserPayload) => {
   return createRequest<TGetUserPayload, TUser>('getUser', payload, BACKEND_URL).andThen<TUser, IApiError>(
     (response) => {
       console.log('response');
